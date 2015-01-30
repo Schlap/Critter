@@ -2,6 +2,8 @@
 <head>
   <link rel="stylesheet" type="text/css" href="/css/stylesheet.css">
   <link rel="stylesheet" type="text/css" href="/css/reset.css">
+  <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="/css/skeleton.css">
   <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
   <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
   <title>Critter</title>
@@ -11,6 +13,23 @@
 
   <section class="navbar">
       <a href="/"><img class="twitter-logo" src="/images/twitter-logo.png"></img></a>
+  </section>
+
+  <section class='container'>
+    <section class="new-post">
+      <form action='/posts' method='post'>
+        <input type='text' name='message' id='post-message'>
+        <input type='submit' value='Post' id='post-button'>
+      </form>
+    </section>
+  </section>
+
+  <section class='container'>
+    <section class='posts'>
+        <% @posts.each do |post| %>
+          <p><%=post.message %></p>
+        <% end %>
+    </section>
   </section>
 
 </body>

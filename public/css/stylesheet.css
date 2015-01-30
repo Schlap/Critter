@@ -16,3 +16,21 @@ body {
   margin-bottom: 3%;
   background-color: white;
 }
+
+.new-post {
+  text-align: center;
+}
+
+.posts {
+  text-align: center;
+}
+
+#post-message {
+  width: 350px;
+}
+
+#post-button {
+  background-color: #55acee;
+  border-color: #3b88c3;
+  color: white;
+}
