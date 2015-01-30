@@ -10,15 +10,17 @@
 </head>
 
 <body>
-
   <section class="navbar">
       <a href="/"><img class="twitter-logo" src="/images/twitter-logo.png"></img></a>
   </section>
 
+  <h1 class="welcome-note">Welcome to Critter</h1>
+
   <section class='container'>
     <section class="new-post">
       <form action='/posts' method='post'>
-        <input type='text' name='message' id='post-message'>
+        Message: <input type='text' name='message' id='post-message'>
+        Tags: <input type='text' name='tags' id='post-tags'>
         <input type='submit' value='Post' id='post-button'>
       </form>
     </section>
@@ -26,9 +28,11 @@
 
   <section class='container'>
     <section class='posts'>
+      <ul>
         <% @posts.each do |post| %>
-          <p><%=post.message %></p>
+          <li id='post-container'><%=post.message %></li>
         <% end %>
+      </ul>
     </section>
   </section>
 

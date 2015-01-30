@@ -21,10 +21,6 @@ body {
   text-align: center;
 }
 
-.posts {
-  text-align: center;
-}
-
 #post-message {
   width: 350px;
 }
@@ -33,4 +29,20 @@ body {
   background-color: #55acee;
   border-color: #3b88c3;
   color: white;
+}
+
+#post-container {
+  /*display: block;
+  width: 500px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  background-color: white;
+  border: solid 1px #3b88c3;
+  border-radius: 5px;
+  margin: auto;*/
+  text-align: center;
+}
+
+.welcome-note {
+  text-align: center
 }
