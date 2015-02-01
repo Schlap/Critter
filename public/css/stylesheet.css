@@ -43,6 +43,10 @@ body {
   text-align: center;
 }
 
+#post-tags {
+  width: 350px;
+}
+
 .welcome-note {
   text-align: center
 }

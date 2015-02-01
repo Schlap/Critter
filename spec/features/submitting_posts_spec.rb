@@ -11,19 +11,9 @@ feature "User submits a new post" do
     expect(post.message).to eq('The Interview is so funny.')
   end
 
-  scenario "with a few tags" do
-    visit '/'
-    submit_post('The Interview is so funny.',
-                ['northkorea', 'jamesfranco'])
-    post = Post.first
-    expect(post.tags.map(&:text)).to include('northkorea')
-    expect(post.tags.map(&:text)).to include('jamesfranco')
-  end
-
-  def submit_post(message, tags = [])
+  def submit_post(message)
     within('.new-post') do
       fill_in 'message', :with => message
-      fill_in 'tags', :with => tags.join(' ')
       click_button 'Post'
     end
   end

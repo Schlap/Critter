@@ -2,8 +2,7 @@ class Post
 
   include DataMapper::Resource
 
-  has n, :tags, :through => Resource
   property :id,       Serial
-  property :message,  String
+  property :message,  String, :required => true, :length => 144
 
 end
