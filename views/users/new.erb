@@ -1,0 +1,10 @@
+<h1 class='sign-up-message'>Please sign up</h1>
+
+<section class='sign-up-form'>
+  <form action="/users" method="post">
+    Email:<br><input name="email" type="text" placeholder='Email' value="<%= @user.email %>"><br>
+    Password:<br><input name="password" type="password" placeholder='Password'><br>
+    Password confirmation:<br><input name="password_confirmation" type="password" placeholder="Re-enter password">
+    <input type="submit" value="Sign up" id='sign-up-button'>
+  </form>
+</section>

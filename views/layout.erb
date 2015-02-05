@@ -10,12 +10,20 @@
 </head>
 
 <body>
+
   <section class="navbar">
     <a href="/"><img class="twitter-logo" src="/images/twitter-logo.png"></img></a>
   </section>
 
-  <h1 class="welcome-note">Welcome to Critter</h1>
+  <% if flash[:notice] %>
+  <div id="notice"><%= flash[:notice] %></div>
+  <% end %>
 
+  <% if current_user %>
+    <h1>Welcome, <%= current_user.email %></h1>
+  <% end %>
+  
   <%= yield %>
+
 </body>
 </html>

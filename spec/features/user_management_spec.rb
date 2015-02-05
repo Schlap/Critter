@@ -1,0 +1,30 @@
+require 'spec_helper'
+
+feature 'User signs up' do
+
+  scenario 'when being a new user visiting the site' do
+    expect{sign_up}.to change(User, :count).by 1
+    expect(User.first.email).to eq 'larry@gmail.com'
+  end
+
+  scenario 'should see a welcome note' do
+    sign_up
+    expect(page).to have_content 'Welcome, larry@gmail.com'
+  end
+
+  scenario 'with a password that doesn\'t match' do
+    expect{sign_up('larry@gmail.com', 'pass', 'wrong')}.to change(User, :count).by 0
+    expect(current_path).to eq '/users'
+    expect(page).to have_content 'Your passwords didn\'t match'
+  end
+
+  def sign_up(email = "larry@gmail.com", password = 12345678, password_confirmation = 12345678)
+    visit 'users/new'
+    expect(page.status_code).to eq(200)
+    fill_in :email, :with => email
+    fill_in :password, :with => password
+    fill_in :password_confirmation, :with => password_confirmation
+    click_button 'Sign up'
+  end
+
+end
