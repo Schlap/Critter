@@ -15,14 +15,18 @@
     <a href="/"><img class="twitter-logo" src="/images/twitter-logo.png"></img></a>
   </section>
 
+  <section class='flash-notice'>
   <% if flash[:notice] %>
-  <div id="notice"><%= flash[:notice] %></div>
+    <p id="notice"><%= flash[:notice] %></p>
   <% end %>
+  </section>
 
+  <section>
   <% if current_user %>
     <h1>Welcome, <%= current_user.email %></h1>
   <% end %>
-  
+  </section>
+
   <%= yield %>
 
 </body>
